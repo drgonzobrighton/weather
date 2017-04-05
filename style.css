@@ -1,0 +1,10 @@
+.weatherReport{
+    
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+h2{
+    
+    text-align: center;
+}
