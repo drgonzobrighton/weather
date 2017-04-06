@@ -1,11 +1,12 @@
-/*function getValue(btn) {
-    
-    alert(btn.value);
-}*/
+var bg = document.getElementById("bgContainer");
+    bg.style.visibility = "hidden";
 function start (){
+    
     
     var cityName = document.getElementById("cityInput").value;
     displayWeather(cityName);
+    getBgPic(cityName);
+  
 }
 var weatherIcons = [
     '<img src="Formatted/clear_sky.png" class="wIcon">',
@@ -21,6 +22,34 @@ var weatherIcons = [
     '<img src="Formatted/clear_night.png" class="wIcon">',
     '<img src="Formatted/few_clouds_night.png" class="wIcon">'
 ];
+
+function getBgPic (cityName) {
+    
+    var cityId = "https://pixabay.com/api/?key=5028176-b8106ed0cd991e7fbf56b109a&q=" + cityName + "&image_type=photo";
+    //console.log(cityId);
+    
+    var myRequest = new XMLHttpRequest();
+    
+    myRequest.open("GET", cityId, true);
+    
+    myRequest.onreadystatechange = function() {
+        
+        if (myRequest.readyState == 4 && myRequest.status == 200) {
+            
+            var picData = JSON.parse(myRequest.responseText);
+            console.log(picData);
+            
+            var rndIndex = Math.floor(Math.random() * 11)
+            
+            var fullscreen = document.getElementById("fullScreen");
+            fullscreen.style.background = "url('" + picData.hits[rndIndex].webformatURL + "') no-repeat center center fixed";
+            fullscreen.style.backgroundSize = "cover";
+        }
+        
+    }
+    
+     myRequest.send();
+}
 
 function displayWeather(cityName) {
     
@@ -38,7 +67,6 @@ var myRequest = new XMLHttpRequest();
             
             var weatherData = JSON.parse(myRequest.responseText);
             
-            console.log(weatherData);
             //Weather variables
             var currentTemp = toCelsius(weatherData.main.temp).toFixed(1);
             var humidity = weatherData.main.humidity + " %";
@@ -64,14 +92,27 @@ var myRequest = new XMLHttpRequest();
             //And the magic....
             
             cityDisplay.innerHTML = city;
-            tempDisplay.innerHTML = currentTemp + " C" 
+            tempDisplay.innerHTML = currentTemp + " &#8451;";
+ 
             descDisplay.innerHTML =  description  + '<br/>' + icon;
-            visibilityDisplay.innerHTML = '<h3>Visibility</h3>' + visibility ;
-            windDisplay.innerHTML = '<h3>Wind</h3>' + wind;
-            humidityDisplay.innerHTML = '<h3>Humidity</h3>' + humidity;
+            visibilityDisplay.innerHTML = 'Visibility: ' + visibility ;
+            windDisplay.innerHTML = 'Wind: ' + wind;
+            humidityDisplay.innerHTML = 'Humidity: ' + humidity;
+            
+            var bg = document.getElementById("bgContainer");
+            bg.style.visibility = "visible";
             
             
-              function getIcon (icon) {
+             
+            
+            }
+      
+        }
+    myRequest.send();
+    
+    }
+    
+ function getIcon (icon) {
                 
                 if (icon == "01d")
                     return weatherIcons[0];
@@ -98,15 +139,6 @@ var myRequest = new XMLHttpRequest();
                 else
                     return weatherIcons[9];
             }
-            
-            }
-      
-        }
-    myRequest.send();
-    
-    }
-    
-
 
 function toCelsius(kelvin) {
     

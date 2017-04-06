@@ -1,22 +1,68 @@
-
+body {
+    
+    background: none;
+    font-family: 'Comfortaa', cursive;
+    
+}
 
 #cityName {
     
     font-size: 7em;
     margin-top: 0;
+    color: white;
 }
 
 .wIcon {
     
     width: 8em;
+    margin: 1em;
 }
 
 #temp{
     
     font-size: 4em;
+    color: white;
 }
 
 #desc {
     
     text-transform: capitalize;
+    color: white;
+    font-size: 1.5em;
+}
+
+#wind, #vis, #hum {
+    
+    margin: 1em;
+    font-size: 2em;
+    color: white;
+}
+
+#bgContainer {
+    
+    background-color: rgba(64, 64, 64, 0.6);
+    display: inline-block;
+    padding: 0 1em;
+    border-radius: 10px;
+    margin-bottom: 1em;
+    
+}
+
+.input {
+    position: absolute;
+    padding-left: 60%;
+    background-color: rgba(64, 64, 64, 0.6);
+    margin-left: 60vw;
+    padding: 0.5em;
+    padding-right: 0;
+    border-radius: 10px;
+    margin-right: 9vw;
+}
+
+.mtLbl {
+    color: white;
+}
+
+.btn {
+    padding: 2px 10px;
 }

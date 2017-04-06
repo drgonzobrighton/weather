@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="fullScreen">
 
 <head>
     <meta charset="utf-8">
@@ -9,6 +9,7 @@
     <title>Global Weather</title>
 
     <!-- Bootstrap -->
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="style.css" rel="stylesheet" type="text/css">
 </head>
@@ -16,25 +17,23 @@
 <body>
 
 
-    <div class="container">
-        <br><br><br>
-        <div class="row">
-            <div class="col-md-2">
+    <div class="container-fluid">
+        <br/>
+        <div class="row input">
+            <div class="col-md-12 ">
+                <label class="mtLbl">Enter City Name:</label>
                 <input type="text" id="cityInput">
                 <button onclick="start()" class="btn"  id="London">Click Me</button>
             </div>
             
             
         </div>
-        <div class="row">
-            <article id="cityName" class="text-center"></article>
-            
-        </div>
+        <div id="bgContainer">
         
         <div class="row">
             <div class="col-md-12 text-center">
             
-            
+            <article id="cityName" class="text-center"></article>
            <!-- <h3>Temperature</h3>-->
                 <article id=temp></article>
                 
@@ -54,6 +53,7 @@
             
             </div>
         
+            </div>
         
     </div>
     <!-- /.container -->
