@@ -15,76 +15,46 @@
 
 <body>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Global Weather</a>
-            </div>
-            <div id="navbar" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    
-                </ul>
-            </div>
-            <!--/.nav-collapse -->
-        </div>
-    </nav>
 
     <div class="container">
         <br><br><br>
         <div class="row">
             <div class="col-md-2">
-                <button onclick="displayWeather(this.id)" class="btn"  id="London">London</button>
+                <input type="text" id="cityInput">
+                <button onclick="start()" class="btn"  id="London">Click Me</button>
             </div>
             
-            <div class="col-md-2">
-                <button onclick="displayWeather(this.id)" class="btn" id="Frankfurt">Frankfurt</button>
-            </div>
             
-            <div class="col-md-2">
-                <button onclick="displayWeather(this.id)" class="btn" id="NewYork">New York</button>
-            </div>
-            
-            <div class="col-md-2">
-                <button onclick="displayWeather(this.id)" class="btn" id="Tokyo">Tokyo</button>
-            </div>
-            
-            <div class="col-md-2">
-                <button onclick="displayWeather(this.id)" class="btn" id="HongKong">Hong-Kong</button>
-            </div>
-            
-            <div class="col-md-2">
-                <button onclick="displayWeather(this.id)" class="btn" id="Sydney">Sydney</button>
-            </div>
         </div>
         <div class="row">
-            <div class="col-md-4">
-            <h1>Wind</h1>
-                <article id=wind></article>
-            </div>
+            <article id="cityName" class="text-center"></article>
             
-            <div class="col-md-4">
-            <h1>Temperature</h1>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-12 text-center">
+            
+            
+           <!-- <h3>Temperature</h3>-->
                 <article id=temp></article>
                 
-                
-            </div>
+                <article id="desc"></article>
             
-            <div class="col-md-4">
-            <h1>Visibility</h1>
+            
                 <article id="vis"></article>
-            </div>
+           
+            
+                <article id=wind></article>
+            
+            
+            
+            
+                <article id="hum"></article>
+            
             
             </div>
-            
-            
         
-        </div>
+        
     </div>
     <!-- /.container -->
 

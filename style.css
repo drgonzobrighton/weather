@@ -1,10 +1,22 @@
-.weatherReport{
+
+
+#cityName {
     
-    border: 1px solid black;
-    border-radius: 4px;
+    font-size: 7em;
+    margin-top: 0;
 }
 
-h2{
+.wIcon {
     
-    text-align: center;
+    width: 8em;
+}
+
+#temp{
+    
+    font-size: 4em;
+}
+
+#desc {
+    
+    text-transform: capitalize;
 }
